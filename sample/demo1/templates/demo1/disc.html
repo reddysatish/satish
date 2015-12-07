@@ -1,0 +1,35 @@
+{% extends "demo1/index.html" %}
+{% block content %}
+
+        <h3><small>{{obj1.title}} </small></h3>
+
+        <h5 class="glyphicon glyphicon-time"> {{ obj1.public_date}} | {{obj1.author}}</h5><br/>
+
+        <img src="{{obj1.image.url}}" class="img-responsive center-block" width="600" height="300" style="padding-bottom: 20px""/><br/>
+        <div class="row">
+            <div class="col-sm-8">
+            <p class="text-justify"> {{ obj1.body_text}}</p>
+            </div>
+            <div class="col-sm-4">
+              <img src="{{obj1.optional_image.url}}" height="75% " width="75%" class="img-responsive img-rounded"/><br/>
+                <p align="center">  Related Image</p>
+            </div>
+        </div>
+
+
+{% endblock %}
+
+
+ {% block footer%}
+
+    <div class="row">
+
+    {% for foo in obj2 %}
+        <div class="col-xs-3">
+           <!-- <img src="{{ f.image.url }}" alt="Picture of Rango" width="100" height="100"/>-->
+            <img  class="img-responsive thumbnail "src="{{foo.image.url}}" class="img-responsive"  />
+            <a href="./{{foo.id}}" >  <p style="color: cornflowerblue;">{{foo.title}}</p></a>
+        </div>
+     {% endfor %}
+     </div>
+{% endblock %}

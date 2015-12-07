@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+    body {
+    background-color: whitesmoke;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: whitesmoke;
+      color: white;
+      padding: 5px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding-top: 12px;
+
+      }
+      .row.content {height: auto;}
+    }
+      @media screen and (max-width: 300px) {
+      .sidenav {
+        height: auto;
+        padding-top: 12px;
+
+      }
+      .row.content {height: auto;}
+    }
+  </style>
+
+</head>
+<body>
+
+      <div class="container">
+
+
+       {% load static %}
+
+             <ul class="nav nav-pills nav-stacked col-sm-1">
+                  <li class="test"><a href="#"> <img  class="img-responsive thumbnail" height="100%" width="100%" src="{% static "images/logo.PNG" %}"  alt="Hi!" /></a></li>
+
+                <li><a href="#"> <img  class="img-responsive thumbnail" src="{% static "images/Capture.PNG" %}"  alt="Hi!" /></a></li>
+                 <li><a href="#"> <img   class="img-responsive thumbnail" src="{% static "images/Capture.PNG" %}" alt="Hi!" /></a></li>
+                <li><a href="#"><img class="img-responsive thumbnail" src="{% static "images/Capture.PNG" %}" alt="Hi!" /></a></li>
+
+              </ul>
+            <div class="col-sm-11">
+           <!-- for list the articles-->
+
+           {% block content %} {% endblock%}
+
+
+            </div>
+        </div>
+
+<footer class="container">
+<div class="col-sm-1"></div>
+<div class="col-sm-11"><hr>
+    <h1><small>What to Read Next</small></h1>
+    <hr>
+
+     {% block footer%} {% endblock %}
+    </div>
+
+</footer>
+
+</body>
+</html>
